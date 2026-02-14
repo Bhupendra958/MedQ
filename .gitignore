@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Local / IDE
+.vscode/
+.idea/
+*.log
+request_debug.txt
+output.txt
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Optional: keep db.php in repo with safe defaults; uncomment to ignore local DB config
+# db.php

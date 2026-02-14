@@ -1,0 +1,40 @@
+========================================
+  Fix: phpMyAdmin "Host localhost is not allowed"
+========================================
+
+Do this ONCE. You need to edit XAMPP's phpMyAdmin config file.
+
+1. OPEN THE CONFIG FILE
+   Go to:   C:\xampp\phpMyAdmin\config.inc.php
+   Right-click → Open with → Notepad (or any text editor).
+
+2. FIND THESE LINES (use Ctrl+F to search for "controluser")
+   You will see something like:
+      $cfg['Servers'][$i]['controluser'] = 'pma';
+      $cfg['Servers'][$i]['controlpass'] = 'something';
+
+3. DISABLE THEM
+   Put // at the start of each line so they become:
+      // $cfg['Servers'][$i]['controluser'] = 'pma';
+      // $cfg['Servers'][$i]['controlpass'] = 'something';
+
+   Or change the values to empty:
+      $cfg['Servers'][$i]['controluser'] = '';
+      $cfg['Servers'][$i]['controlpass'] = '';
+
+4. SAVE THE FILE (Ctrl+S)
+   Close Notepad.
+
+5. TRY AGAIN
+   - Refresh:  http://localhost/phpmyadmin/
+   - You should see the phpMyAdmin login screen.
+   - Log in with:
+       User: root
+       Password: (leave empty for default XAMPP)
+
+6. THEN IMPORT setup.sql
+   - Click "Import" tab.
+   - Choose file:  C:\xampp\htdocs\MedQueue\setup.sql
+   - Click "Go".
+
+Done. You can delete this file (FIX_PHPMYADMIN.txt) after fixing.

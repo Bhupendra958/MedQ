@@ -1,0 +1,44 @@
+========================================
+  MedQueue - Run with XAMPP only
+========================================
+
+1. COPY PROJECT
+   Copy the entire MedQueue folder to XAMPP's htdocs:
+   
+   C:\xampp\htdocs\MedQueue
+   
+   (So you have: C:\xampp\htdocs\MedQueue\index.php, etc.)
+
+2. START XAMPP
+   - Open XAMPP Control Panel
+   - Start "Apache"
+   - Start "MySQL"
+
+3. CREATE DATABASE (one-time)
+   - Open http://localhost/phpmyadmin
+   - Click "Import" (or "SQL" tab)
+   - Choose the file: MedQueue\setup.sql
+   - Click "Go" to run it
+   (This creates the database "hospital_queue" and tables.)
+
+4. OPEN THE APP
+   Use the EXACT URL (folder name must match your folder in htdocs):
+   
+   http://localhost/MedQueue/
+   
+   Or:  http://localhost/MedQueue/index.php
+
+   --- "Not Found" (404)? ---
+   • Check the folder name: open C:\xampp\htdocs\ and see the exact
+     name (e.g. MedQueue or Medqueue). Use that in the URL:
+     http://localhost/FOLDERNAME/
+   • Test first: open  http://localhost/MedQueue/test_xampp.php
+     If that works, then use  http://localhost/MedQueue/index.php
+   • Make sure you have:  C:\xampp\htdocs\MedQueue\index.php  (file exists).
+
+5. DONE
+   - Use Home, Doctors, About, Feedback
+   - Register a user, then Login
+   - Book appointments from the Doctors page
+
+Note: If you get "Database connection error", make sure MySQL is running in XAMPP and you have run setup.sql in phpMyAdmin.
