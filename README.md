@@ -2,6 +2,8 @@
 
 A hospital queue and appointment system — book appointments, get token numbers, and view your dashboard. Works on desktop and **mobile (phone)**.
 
+**Live link (any platform):** [https://bhupendramedqueue.onrender.com](https://bhupendramedqueue.onrender.com) — see **[DEPLOY.md](DEPLOY.md)** to set it up. When you push changes to GitHub, the live site updates automatically.
+
 ---
 
 ## Push to GitHub

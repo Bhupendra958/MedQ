@@ -1,0 +1,10 @@
+# Render Blueprint - Deploy from GitHub; updates automatically when you push.
+# Live link: https://bhupendramedqueue.onrender.com
+services:
+  - type: web
+    runtime: docker
+    name: bhupendramedqueue
+    plan: free
+    # Connect your GitHub repo in Render Dashboard; then this repo will be used.
+    # envVars (set in Render Dashboard → Environment):
+    #   MYSQL_HOST, MYSQL_USERNAME, MYSQL_PASSWORD, MYSQL_DATABASE
