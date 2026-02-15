@@ -5,6 +5,10 @@ if ($uri === '/' || $uri === '') {
     require __DIR__ . '/index.php';
     return true;
 }
+if ($uri === '/health' || $uri === '/health.php') {
+    require __DIR__ . '/health.php';
+    return true;
+}
 $path = __DIR__ . $uri;
 if (is_file($path)) {
     return false; // let server serve the file

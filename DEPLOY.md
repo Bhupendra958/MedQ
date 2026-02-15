@@ -60,3 +60,21 @@ Render will detect the push and **redeploy automatically**. The same link keeps 
 ## Optional: Custom domain
 
 In Render: **Dashboard** → your service **bhupendramedqueue** → **Settings** → **Custom Domains**. You can add your own domain (e.g. `bhupendramedqueue.com`) if you have one.
+
+---
+
+## Troubleshooting: "Live link not working"
+
+1. **Did you create the Web Service on Render?**  
+   Pushing to GitHub is not enough. You must go to [render.com](https://render.com) → **New +** → **Web Service** → connect **Bhupendra958/MedQueue** → choose **Docker** → add the 4 MySQL env vars → **Create Web Service**. Wait until status is **Live**.
+
+2. **First load is slow (free tier).**  
+   Render free tier puts your app to sleep after ~15 min of no traffic. The **first request** after that can take **30–60 seconds** (cold start). Wait once; if it’s slow, try again or open **https://bhupendramedqueue.onrender.com/health** — that endpoint answers quickly when the app is up.
+
+3. **Check Render Dashboard.**  
+   - **Logs**: see build errors or PHP errors (e.g. missing MySQL env or wrong DB credentials).  
+   - **Events**: confirm the last deploy succeeded.  
+   - **Environment**: ensure `MYSQL_HOST`, `MYSQL_USERNAME`, `MYSQL_PASSWORD`, `MYSQL_DATABASE` are set.
+
+4. **Database.**  
+   If the homepage loads but login/register/dashboard fail, the app can’t reach MySQL. Fix the 4 env vars (host, username, password, database name) and ensure you imported **setup.sql** in your remote MySQL (e.g. remotemysql.com phpMyAdmin).
